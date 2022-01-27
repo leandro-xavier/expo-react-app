@@ -1,11 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import {Image, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import profile from './assets/icon.png';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+       <Image source={profile} style={{ width: 305, height: 159 }} /> 
+      <Text style={{color: '#888', fontSize: 18}}>Hello word</Text>
       <StatusBar style="auto" />
+      <TouchableOpacity
+        onPress={() => alert('Hello, world!')}
+        style={{ backgroundColor: 'blue' }}>
+        <Text style={{ fontSize: 20, color: '#fff' }}>Pick a photo</Text>
+      </TouchableOpacity>
     </View>
   );
 }
